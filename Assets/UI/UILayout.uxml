@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="Play Again" name="RestartButton" enable-rich-text="true" style="top: 253px; left: 110px; position: absolute; font-size: 20px;"/>
+    <ui:Label text="You Win!" name="Win_Text" focusable="false" tabindex="-1" style="position: absolute; top: 98px; left: 129px; height: 29px; width: 82px; font-size: 20px;"/>
+</ui:UXML>
