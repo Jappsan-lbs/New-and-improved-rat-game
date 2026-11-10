@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PlayerScript : MonoBehaviour
 {
+    private Button restartButton;
     public InputAction LeftAction;
     public InputAction MoveAction;
 
@@ -45,6 +46,15 @@ public class PlayerScript : MonoBehaviour
     private bool isGrounded;
     private bool isDashing;
     private bool dashQueued;
+
+    void Strat()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        restartButton = uiDocument.rootVisualElement.Q<Button>("RestarButton");
+        restartButton.style.display = DisplayStyle.None;
+
+
+    }
 
     private void Awake()
     {
