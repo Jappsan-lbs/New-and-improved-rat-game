@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 private float horizontal;
 private float speed = 8f;
-private float jumpingPower = 16f;
+private float JumpingPower = 16f;
 private bool isFacingRight = true;
 
 [SerializeField] private Rigidbody2D rb;
@@ -26,7 +25,15 @@ private bool isFacingRight = true;
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input)
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpingPower);
+        }
+        
+        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+        }
 
         Flip();
     }
